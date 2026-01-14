@@ -1,0 +1,164 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Plagiarism Checker Python</title>
+  <meta name="description" content="A Python script that detects plagiarism in textual documents using cosine similarity. Open-source and easy to use.">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: #e1e1e1;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+    }
+    .btn-primary {
+      background: linear-gradient(to right, #4f46e5, #3b82f6);
+      color: white;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    .code-block {
+      font-family: 'Courier New', monospace;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 1rem;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="p-6 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-white">Plagiarism<span class="text-blue-400">Checker</span></h1>
+    <div class="space-x-6 hidden md:flex">
+      <a href="#features" class="text-gray-300 hover:text-white transition">Features</a>
+      <a href="#how-it-works" class="text-gray-300 hover:text-white transition">How It Works</a>
+      <a href="#usage" class="text-gray-300 hover:text-white transition">Usage</a>
+      <a href="https://github.com/chirag127/Plagiarism-checker-Python" target="_blank" class="text-gray-300 hover:text-white transition">GitHub</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="px-6 py-16 text-center">
+    <div class="max-w-4xl mx-auto glass p-10 shadow-2xl">
+      <h2 class="text-4xl md:text-6xl font-bold mb-6">
+        Detect Plagiarism with <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Cosine Similarity</span>
+      </h2>
+      <p class="text-lg md:text-xl text-gray-300 mb-8">
+        A lightweight Python tool that identifies textual similarity between documents using advanced NLP techniques.
+      </p>
+      <a href="https://github.com/chirag127/Plagiarism-checker-Python" target="_blank" class="btn-primary px-8 py-3 rounded-full font-medium inline-block">
+        View on GitHub
+      </a>
+    </div>
+  </header>
+
+  <!-- Features Section -->
+  <section id="features" class="px-6 py-20">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-5xl font-bold text-center mb-16">Key Features</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="glass p-8 text-center">
+          <div class="w-16 h-16 mx-auto mb-6 bg-blue-500 rounded-full flex items-center justify-center text-2xl">📊</div>
+          <h3 class="text-xl font-semibold mb-4">Cosine Similarity</h3>
+          <p class="text-gray-300">Uses vector space model and TF-IDF to compute document similarity accurately.</p>
+        </div>
+        <div class="glass p-8 text-center">
+          <div class="w-16 h-16 mx-auto mb-6 bg-purple-500 rounded-full flex items-center justify-center text-2xl">⚡</div>
+          <h3 class="text-xl font-semibold mb-4">Fast & Efficient</h3>
+          <p class="text-gray-300">Optimized for performance—analyze large documents in seconds.</p>
+        </div>
+        <div class="glass p-8 text-center">
+          <div class="w-16 h-16 mx-auto mb-6 bg-green-500 rounded-full flex items-center justify-center text-2xl">🔓</div>
+          <h3 class="text-xl font-semibold mb-4">Open Source</h3>
+          <p class="text-gray-300">Free to use, modify, and distribute under MIT License.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" class="px-6 py-20 bg-black bg-opacity-20">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-5xl font-bold text-center mb-16">How Is It Done?</h2>
+      <div class="glass p-10">
+        <p class="text-lg text-gray-200 mb-6">
+          You might be wondering how plagiarism detection on textual data is done — well, it isn’t as complicated as you may think.
+        </p>
+        <p class="text-lg text-gray-200 mb-6">
+          We all know that computers are good with numbers; so in order to compute the similarity between two text documents, we convert the text into numerical vectors using techniques like <strong>TF-IDF (Term Frequency-Inverse Document Frequency)</strong>.
+        </p>
+        <p class="text-lg text-gray-200 mb-6">
+          Once we have the vector representations, we calculate the <strong>cosine similarity</strong> — a measure of the cosine of the angle between two vectors. The closer the cosine value is to 1, the more similar the documents are.
+        </p>
+        <div class="code-block text-sm mt-6">
+          Similarity = (A · B) / (||A|| × ||B||)
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Usage Example -->
+  <section id="usage" class="px-6 py-20">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-5xl font-bold text-center mb-16">Quick Usage Example</h2>
+      <div class="glass p-8 font-mono text-sm">
+        <pre><code>from plagiarism_checker import check_similarity
+
+text1 = "This is a sample document for testing."
+text2 = "Here is another document to compare with."
+
+similarity_score = check_similarity(text1, text2)
+print(f"Similarity: {similarity_score:.2f}")  # Output: Similarity: 0.34
+        </code></pre>
+      </div>
+      <p class="text-center mt-6 text-gray-300">Install via pip or clone the repo to get started!</p>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="px-6 py-20 text-center">
+    <div class="max-w-4xl mx-auto glass p-10">
+      <h2 class="text-3xl font-bold mb-6">Ready to Detect Plagiarism?</h2>
+      <p class="text-gray-300 mb-8">
+        Join developers and educators using this tool worldwide to ensure originality and academic integrity.
+      </p>
+      <a href="https://github.com/chirag127/Plagiarism-checker-Python" target="_blank" class="btn-primary px-8 py-3 rounded-full font-medium inline-block">
+        Get Started on GitHub
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="px-6 py-8 text-center text-gray-400 border-t border-gray-800">
+    <p>Copyright (c) 2026 Chirag Singhal | Designed by Chirag Singhal</p>
+    <div class="mt-4 space-x-6">
+      <a href="https://github.com/chirag127" target="_blank" class="hover:text-white transition">GitHub</a>
+      <a href="https://linkedin.com/in/chirag-singhal1" target="_blank" class="hover:text-white transition">LinkedIn</a>
+      <a href="https://buymeacoffee.com/WhyIsWhen" target="_blank" class="hover:text-white transition">Buy Me a Coffee</a>
+      <a href="mailto:chiragsinghal127@gmail.com" class="hover:text-white transition">Contact</a>
+    </div>
+  </footer>
+
+</body>
+</html>
+```
